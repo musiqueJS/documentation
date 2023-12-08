@@ -1,7 +1,36 @@
 # Introduction
 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+---
 
-## What is Musique.js?
+### What is Musique.js?
 
 Musique.js is a JavaScript library that allows you to create music in the browser. It is based on the Web Audio API.
+
+Here is a minimal example of how to use Musique.js:
+
+```javascript
+import { Partition, Note, NoteEnum } from 'musiquejs';
+
+const partition = new Partition(
+[
+  new Note(NoteEnum['D'], 4, 0.18),
+  new Note(NoteEnum['D'], 4, 0.18),
+  new Note(NoteEnum['D'], 5, 0.36]),
+  new Note(NoteEnum['A'], 4, 0.54),
+],
+'square',
+audioContext
+);
+
+partition.play();
+```
+
+The above code will play the first few notes of the song *Megalovania*.
+
+### Why Musique.js?
+
+Musique.js is a wrapper around the Web Audio API. It is designed to make it easier to create music in the browser. It is also designed to be easy to use and easy to learn.
+
+### How to use Musique.js?
+
+Musique.js is a JavaScript library. It can be used in any JavaScript project. It can also be used in any JavaScript framework, such as React, Vue, Angular, etc.

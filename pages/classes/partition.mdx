@@ -1,0 +1,65 @@
+# Partition
+
+## What is a partition?
+
+A partition is a collection of notes. It is the most basic element of music.
+
+## How to create a partition?
+
+A partition can be created with the following code:
+
+```javascript filename="index.js" {3-12} copy
+import { Partition, Note, NoteEnum } from 'musiquejs';
+
+const partition = new Partition(
+[
+  new Note(NoteEnum['D'], 4, 0.18),
+  new Note(NoteEnum['D'], 4, 0.18),
+  new Note(NoteEnum['D'], 5, 0.36),
+  new Note(NoteEnum['A'], 4, 0.54),
+],
+'square',
+audioContext
+);
+
+```
+
+The above code will create a partition with the following notes:
+
+- D4 with a duration of 0.18 seconds
+- D4 with a duration of 0.18 seconds
+- D5 with a duration of 0.36 seconds
+- A4 with a duration of 0.54 seconds
+
+You can choose the OscillatorType of the partition. The default value is `'sine'`.
+
+List of OscillatorType:
+    - sine
+    - square
+    - sawtooth
+    - triangle
+
+You can also choose the AudioContext of the partition.
+By default you can use `window.AudioContext`.
+
+## How to play a partition?
+
+A partition can be played with the following code:
+
+```javascript filename="index.js" {14} copy
+import { Partition, Note, NoteEnum } from 'musiquejs';
+
+const partition = new Partition(
+[
+  new Note(NoteEnum['D'], 4, 0.18),
+  new Note(NoteEnum['D'], 4, 0.18),
+  new Note(NoteEnum['D'], 5, 0.36),
+  new Note(NoteEnum['A'], 4, 0.54),
+],
+'square',
+audioContext
+);
+
+partition.play();
+
+```

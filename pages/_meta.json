@@ -1,8 +1,7 @@
 {
   "index": "Introduction",
   "installation": "Installation",
-  "folder": "Folder Structure",
-  "components": "Test Components",
+  "classes": "Classes",
   "about": {
     "title": "About",
     "type": "page"
