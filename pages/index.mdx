@@ -9,17 +9,17 @@ Musique.js is a JavaScript library that allows you to create music in the browse
 Here is a minimal example of how to use Musique.js:
 
 ```javascript
-import { Partition, Note, NoteEnum } from 'musiquejs';
+import { Partition, Note } from 'musiquejs';
 
 const partition = new Partition(
 [
-  new Note(NoteEnum['D'], 4, 0.18),
-  new Note(NoteEnum['D'], 4, 0.18),
-  new Note(NoteEnum['D'], 5, 0.36]),
-  new Note(NoteEnum['A'], 4, 0.54),
+  new Note('D', 4, 0.18),
+  new Note('D', 4, 0.18),
+  new Note('D', 5, 0.36]),
+  new Note('A', 4, 0.54),
 ],
-'square',
-audioContext
+'sine',
+new AudioContext()
 );
 
 partition.play();

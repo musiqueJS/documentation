@@ -1,6 +1,4 @@
 {
   "note": "Note",
-  "note-enum": "NoteEnum",
-  "partition": "Partition",
-  "custom-chord": "Custom Chord"
+  "partition": "Partition"
 }

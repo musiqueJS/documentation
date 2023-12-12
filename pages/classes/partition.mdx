@@ -9,16 +9,16 @@ A partition is a collection of notes. It is the most basic element of music.
 A partition can be created with the following code:
 
 ```javascript filename="index.js" {3-12} copy
-import { Partition, Note, NoteEnum } from 'musiquejs';
+import { Partition, Note } from 'musiquejs';
 
 const partition = new Partition(
 [
-  new Note(NoteEnum['D'], 4, 0.18),
-  new Note(NoteEnum['D'], 4, 0.18),
-  new Note(NoteEnum['D'], 5, 0.36),
-  new Note(NoteEnum['A'], 4, 0.54),
+  new Note('D', 4, 0.18),
+  new Note('D', 4, 0.18),
+  new Note('D', 5, 0.36),
+  new Note('A', 4, 0.54),
 ],
-'square',
+'sine',
 audioContext
 );
 
@@ -47,16 +47,16 @@ By default you can use `window.AudioContext`.
 A partition can be played with the following code:
 
 ```javascript filename="index.js" {14} copy
-import { Partition, Note, NoteEnum } from 'musiquejs';
+import { Partition, Note } from 'musiquejs';
 
 const partition = new Partition(
 [
-  new Note(NoteEnum['D'], 4, 0.18),
-  new Note(NoteEnum['D'], 4, 0.18),
-  new Note(NoteEnum['D'], 5, 0.36),
-  new Note(NoteEnum['A'], 4, 0.54),
+  new Note('D', 4, 0.18),
+  new Note('D', 4, 0.18),
+  new Note('D', 5, 0.36),
+  new Note('A', 4, 0.54),
 ],
-'square',
+'sine',
 audioContext
 );
 

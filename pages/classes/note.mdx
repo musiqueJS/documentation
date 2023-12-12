@@ -9,9 +9,9 @@ A note is a sound with a specific pitch and duration. It is the most basic eleme
 A note can be created with the following code:
 
 ```javascript filename="index.js" {3} copy
-import { Note, NoteEnum } from 'musiquejs';
+import { Note } from 'musiquejs';
 
-const note = new Note(NoteEnum['C'], 4, 0.5);
+const note = new Note('C', 4, 0.5);
 ```
 
 The above code will create a note with the pitch C4 and the duration 0.5 seconds.
@@ -22,9 +22,9 @@ The above code will create a note with the pitch C4 and the duration 0.5 seconds
 A note can be played with the following code:
 
 ```javascript filename="index.js" {5} copy
-import { Note, NoteEnum } from 'musiquejs';
+import { Note } from 'musiquejs';
 
-const note = new Note(NoteEnum['C'], 4, 0.5);
+const note = new Note('C', 4, 0.5);
 
 note.play();
 ```
