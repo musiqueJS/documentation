@@ -22,7 +22,7 @@ const config: DocsThemeConfig = {
       };
     } else {
       return {
-        titleTemplate: "Musique.js",
+        titleTemplate: "Musique.js | Docs",
       };
     }
   },
