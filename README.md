@@ -1,23 +1,15 @@
-# Nextra Docs Template 
+# Musique.js Documentation
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+🌐 : [https://docs.musiquejs.com/](https://docs.musiquejs.com/)
 
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
+## Installation
 
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
+```bash
+pnpm install
+```
 
-## Quick Start
+## Development
 
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
-
-## Local Development
-
-First, run `pnpm i` to install the dependencies.
-
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
-
-## License
-
-This project is licensed under the MIT License.
+```bash
+pnpm run dev
+```
