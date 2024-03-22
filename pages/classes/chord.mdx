@@ -1,0 +1,81 @@
+# Chords
+
+## What is a Chord?
+
+A chord is a group of [notes](/classes/note) that are played together.
+
+## Types of Chords
+
+This library implements two classes for chords:
+- [CustomChord](/classes/chord#customchord)
+- [Chord](/classes/chord#chord)
+
+## CustomChord
+
+What we call "CustomChord" is a class that allows you to create your own chords by specifying the notes you want to include in it.
+
+## How to create a custom chord?
+
+```javascript filename="index.js" {3-7} copy
+import { CustomChord, Note } from 'musiquejs';
+
+const cchord = new CustomChord([
+    new Note('G', 5, 0.18),
+    new Note('C', 5, 0.18),
+    new Note('E', 5, 0.18)
+  ]);
+```
+
+CustomChords can then simply be inserted into a [partition](/classes/partition) easily like [notes](/classes/note) or played directly.
+
+## How to play a custom chord?
+
+```javascript filename="index.js" {8} copy
+import { CustomChord, Note } from 'musiquejs';
+
+const cchord = new CustomChord([
+    new Note('C', 5, 0.18),
+    new Note('E', 5, 0.18)
+]);
+
+cchord.play();
+```
+
+## Chord
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout type="warning" emoji="⚠️">
+  Chords have yet to be added to the library as of version 1.1.0.
+  This feature will be added in a future release, it could change from what is currently displayed here.
+</Callout>
+
+What we call "Chord" is a class that represents an existing real-life chord tha is often present in music pieces.
+
+## Existing chords
+
+| Chord   |  Notes   |
+|:--------|:--------:|
+| A major | A, C#, E |
+| C major | C, E, G  |
+| D major | D, F#, A |
+
+A chord can be called with the following code:
+
+```javascript filename="index.js" {3} copy
+import { Chord } from 'musiquejs';
+
+const chord = new Chord('C Major');
+```
+
+Chords can then simply be inserted into a [partition](/classes/partition) or played directly.
+
+## How to play a chord?
+
+```javascript filename="index.js" {5} copy
+import { Chord } from 'musiquejs';
+
+const chord = new Chord('C Major');
+
+chord.play();
+```
