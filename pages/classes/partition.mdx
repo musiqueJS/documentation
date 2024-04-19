@@ -6,30 +6,79 @@ A partition is a collection of notes. It is the most basic element of music.
 
 ## How to create a partition?
 
-A partition can be created with the following code:
+A partition can be created in two ways.
+
+Either with the following code:
 
 ```javascript filename="index.js" {3-12} copy
-import { Partition, Note } from 'musiquejs';
+import { Partition, Note, Chord } from 'musiquejs';
 
 const partition = new Partition(
-[
-  new Note('D', 4, 0.18),
-  new Note('D', 4, 0.18),
-  new Note('D', 5, 0.36),
-  new Note('A', 4, 0.54),
-],
-'sine',
-audioContext
+  [
+    new Note('D', 4, 0.18),
+    new Note('D', 4, 0.18),
+    new Note('D', 5, 0.36),
+    new Chord([new Note('A', 4, 0.54), new Note('C', 5, 0.54)])
+  ],
+  'sine',
+  audioContext
 );
+```
+Or by importing a JSON / creating a JSON object in JS:
 
+```json
+// partition.json
+[
+    {
+      "note": "D",
+      "octave": 4,
+      "duration": 0.18
+    },
+    {
+      "note": "D",
+      "octave": 4,
+      "duration": 0.18
+    },
+    {
+      "note": "D",
+      "octave": 5,
+      "duration": 0.36
+    },
+    [
+      {
+        "note": "A",
+        "octave": 4,
+        "duration": 0.54
+      },
+      {
+        "note": "C",
+        "octave": 5,
+        "duration": 0.54
+      }
+    ]
+]
 ```
 
-The above code will create a partition with the following notes:
+```javascript filename="index.js" {5-12} copy
+import { JSONPartition } from 'musiquejs';
+
+const json = require('./partition.json');
+
+const partition = new JSONPartition(
+  json,
+  'sine',
+  audioContext
+);
+```
+
+Importing a JSON might seem longer, but it is useful when you want to create a partition from a file or share your creations!
+
+This will create a partition with the following notes:
 
 - D4 with a duration of 0.18 seconds
 - D4 with a duration of 0.18 seconds
 - D5 with a duration of 0.36 seconds
-- A4 with a duration of 0.54 seconds
+- A chord containing A4 with a duration of 0.54 seconds and C5 with a duration of 0.54 seconds
 
 You can choose the OscillatorType of the partition. The default value is `'sine'`.
 
@@ -40,7 +89,7 @@ List of OscillatorType:
     - triangle
 
 You can also choose the AudioContext of the partition.
-By default you can use `window.AudioContext`.
+By default, you can use `window.AudioContext`.
 
 ## How to play a partition?
 
