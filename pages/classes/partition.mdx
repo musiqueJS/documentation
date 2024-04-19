@@ -8,7 +8,9 @@ A partition is a collection of notes. It is the most basic element of music.
 
 A partition can be created in two ways.
 
-Either with the following code:
+### Partition Class
+
+You can create a partition by using the Partition class and passing an array of notes or chords, the oscillator type and the audio context.
 
 ```javascript filename="index.js" {3-12} copy
 import { Partition, Note, Chord } from 'musiquejs';
@@ -24,8 +26,9 @@ const partition = new Partition(
   audioContext
 );
 ```
-Or by importing a JSON / creating a JSON object in JS:
 
+### JSONPartition Class
+You can also create a partition by using the JSONPartition class and passing a JSON object.
 ```json
 // partition.json
 [
@@ -70,10 +73,9 @@ const partition = new JSONPartition(
   audioContext
 );
 ```
-
 Importing a JSON might seem longer, but it is useful when you want to create a partition from a file or share your creations!
 
-This will create a partition with the following notes:
+No matter which way you choose, this will create a partition with the following notes:
 
 - D4 with a duration of 0.18 seconds
 - D4 with a duration of 0.18 seconds
